@@ -22,11 +22,14 @@ pub fn space_find(input: &str) -> IResult<&str, &str> {
 }
 
 #[no_mangle]
-pub extern fn space_find_export(input: &str) -> PairStr {
-    let (x, y) = space_find(input).unwrap();
-    PairStr{
-        left : CString::new(x).unwrap().into_raw(),
-        right : CString::new(y).unwrap().into_raw(),
+pub extern fn space_find_export(input: *const c_char) -> PairStr {
+    unsafe {
+        let input_str: &str= CStr::from_ptr(input).to_str().unwrap();
+        let (x, y) = space_find(input_str).unwrap();
+        PairStr{
+            left : CString::new(x).unwrap().into_raw(),
+            right : CString::new(y).unwrap().into_raw(),
+        }
     }
 }
 
@@ -37,7 +40,8 @@ mod tests {
 
     #[test]
     fn test_space_find() {
-        let input = "hello world";
+        let input_str = b"hello world\0";
+        let input: *const c_char = input_str.as_ptr() as *const c_char;
         let ret = space_find_export(input);
         unsafe {
             assert_eq!(CStr::from_ptr(ret.left).to_str().unwrap(), "world");

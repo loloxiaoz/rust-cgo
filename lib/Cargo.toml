@@ -1,10 +1,10 @@
 [package]
-name = "hyper_ffi"
+name = "hyper"
 version = "0.1.0"
 authors = ["luopan<luopan@qianxin.com>"]
 
 [lib]
-name = "hyper_ffi"
+name = "hyper"
 path = "src/lib.rs"
 crate-type = ["cdylib"]
 

@@ -10,5 +10,5 @@ fn main() {
         .expect("Unable to find cbindgen.toml configuration file");
     cbindgen::generate_with_config(&crate_dir, config)
         .unwrap()
-        .write_to_file(out_dir.join("hyper_ffi.h"));
+        .write_to_file(out_dir.join("hyper.h"));
 }
