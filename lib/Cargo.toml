@@ -1,0 +1,17 @@
+[package]
+name = "hyper_ffi"
+version = "0.1.0"
+authors = ["luopan<luopan@qianxin.com>"]
+
+[lib]
+name = "hyper_ffi"
+path = "src/lib.rs"
+crate-type = ["cdylib"]
+
+[build-dependencies]
+cbindgen = "0.12.2"
+
+[dependencies]
+libc = "*"
+nom = "5"
+toml = "0.5.5"
