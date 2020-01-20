@@ -1,6 +1,6 @@
 # Golang调用Rust代码
 
-将rust中组合子实例函数封装成动态库，并在golang中调用
+将rust中组合子示例函数封装成动态库，并在golang中调用
 
 ## 1 Rust 生成c语言头文件和动态库  
 
