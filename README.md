@@ -1,12 +1,14 @@
 # Golang调用Rust代码
 
-## 1 Rust 生成c语言头文件和动态库 
+将rust中组合子实例函数封装成动态库，并在golang中调用
+
+## 1 Rust 生成c语言头文件和动态库  
 
 为 Rust 库编写[FFI](https://doc.rust-lang.org/nomicon/ffi.html)(Foreign Function Interface)
 
-## 编写Rust库的sdk
+## 包装Rust库
 
-由于rust类型无法直接导出成c语言识别的数据类型, 因此需要编写sdk将数据类型和函数声明重新包装
+由于rust类型无法直接导出成c语言识别的数据类型, 因此需要将数据类型和函数声明重新包装
 
 ```Rust
 #[repr(C)]
