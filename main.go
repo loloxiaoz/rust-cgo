@@ -1,7 +1,6 @@
 package main
 
 /*
-#cgo CFLAGS: -I .
 #cgo LDFLAGS: -L./lib -lhyper
 #include "./lib/hyper.h"
 */

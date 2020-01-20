@@ -12,6 +12,5 @@ crate-type = ["cdylib"]
 cbindgen = "0.12.2"
 
 [dependencies]
-libc = "*"
 nom = "5"
 toml = "0.5.5"
