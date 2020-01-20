@@ -6,7 +6,7 @@
 
 为 Rust 库编写[FFI](https://doc.rust-lang.org/nomicon/ffi.html)(Foreign Function Interface)
 
-## 包装Rust库
+### 包装Rust库
 
 由于rust类型无法直接导出成c语言识别的数据类型, 因此需要将数据类型和函数声明重新包装
 
@@ -23,7 +23,7 @@ pub extern fn space_find_export(input: *const c_char) -> PairStr {
 }
 ```
 
-## 使用cbindgen自动导出h文件
+### 使用cbindgen自动导出h文件
 
 使用[cbindgen](https://github.com/eqrion/cbindgen)工具根据rust代码自动生成c语言头文件
 > cbindgen has a simple but effective strategy. It walks through your crate looking for:  
